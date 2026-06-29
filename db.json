@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "name": "Ocean Breeze",
+    "colors": {
+      "primary": "#0ea5e9",
+      "secondary": "#06b6d4",
+      "accent": "#f43f5e",
+      "background": "#0f172a",
+      "surface": "#1e293b",
+      "text": "#f8fafc"
+    },
+    "typography": {
+      "titleFont": "Outfit",
+      "bodyFont": "Inter",
+      "titleSize": "2.5rem",
+      "bodySize": "1rem",
+      "lineHeight": "1.6"
+    },
+    "card": {
+      "radius": "16px",
+      "shadow": "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
+      "blur": "12px",
+      "padding": "24px"
+    },
+    "createdAt": "2026-06-29T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Neon Cyberpunk",
+    "colors": {
+      "primary": "#d946ef",
+      "secondary": "#a855f7",
+      "accent": "#22c55e",
+      "background": "#090514",
+      "surface": "#160e2a",
+      "text": "#f8fafc"
+    },
+    "typography": {
+      "titleFont": "Outfit",
+      "bodyFont": "Fira Code",
+      "titleSize": "2.8rem",
+      "bodySize": "0.95rem",
+      "lineHeight": "1.5"
+    },
+    "card": {
+      "radius": "8px",
+      "shadow": "0 8px 32px 0 rgba(217, 70, 239, 0.2)",
+      "blur": "0px",
+      "padding": "20px"
+    },
+    "createdAt": "2026-06-29T12:15:00Z"
+  }
+]

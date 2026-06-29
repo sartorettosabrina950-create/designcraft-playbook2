@@ -1,0 +1,241 @@
+/* DesignCraft Premium CSS Design System */
+
+/* CSS Variables defining the application theme system.
+   These are dynamically updated by JavaScript based on user inputs. */
+:root {
+  /* Color System */
+  --primary: #0ea5e9;
+  --primary-rgb: 14, 165, 233;
+  --secondary: #06b6d4;
+  --accent: #f43f5e;
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --surface-color-rgb: 30, 41, 59;
+  --text-color: #f8fafc;
+  
+  /* Interface UI Colors (Separate from customizer colors) */
+  --ui-bg: #090d16;
+  --ui-surface: #131b2e;
+  --ui-border: rgba(255, 255, 255, 0.08);
+  --ui-border-focus: rgba(14, 165, 233, 0.4);
+  --ui-text-muted: #94a3b8;
+  --ui-text: #f8fafc;
+  
+  /* Customizer Variables (Applied to the live preview card) */
+  --title-font: 'Outfit', sans-serif;
+  --body-font: 'Inter', sans-serif;
+  --title-size: 2.5rem;
+  --body-size: 1.0rem;
+  --line-height: 1.6;
+  
+  --card-radius: 16px;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  --card-blur: 12px;
+  --card-padding: 24px;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--ui-bg);
+  color: var(--ui-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Premium Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ui-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #273552;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #384f7c;
+}
+
+/* Header Styling */
+.app-header {
+  background: rgba(19, 27, 46, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ui-border);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rotate 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.header-logo h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.badge {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.badge-primary {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--ui-border);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.status-indicator.online {
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.status-indicator.offline {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: var(--ui-text-muted);
+}
+
+/* Layout Container */
+.app-container {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  padding: 24px 40px;
+  flex: 1;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sidebar Control Panel */
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.control-section {
+  background-color: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.control-section:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--ui-border);
+  padding-bottom: 10px;
+}
+
+.step-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.1);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-header h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--ui-text-muted);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Color Pickers Styles */
+.color-pickers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.color-picker-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+color is long... (truncated for brevity)
